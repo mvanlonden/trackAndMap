@@ -4,10 +4,8 @@ trackAndMap
 Tracks video input using an HSV filter and outputs a MATLAB figure analyzing movement
 ## 
 
-### Open the terminal
-
-### To navigate through folders use commands:
-
+## Aquiring Data
+### In the terminal navigate through folders using commands:
 - **ls** will list files and folders of the current directory
 - **cd 'folder name'** will change into directory 'folder name'
 - **cd ..** will navigate to the parent directory
@@ -23,7 +21,7 @@ Tracks video input using an HSV filter and outputs a MATLAB figure analyzing mov
 3. Once cross hair is consistently tracking, switch from pause to play and switch recording on
 4. Once recording is complete, open .csv folder to validate results
 
-## To graph results in MATLAB
+## Graphing results in MATLAB
 ### Importing
 1. Select 'Import Data' in the toolbar
 2. Navigate to and select the .csv file
@@ -33,8 +31,35 @@ Tracks video input using an HSV filter and outputs a MATLAB figure analyzing mov
 
 ### Heatmap Graphing
 1. Either clone heatmap.m from this repository into your working MATLAB directory or select 'New Script' from the toolbar and copy and paste the contents of heatmap.m into the script and save it as heatmap.m
-2. In the Command Window enter **xy = horzcat(framexy(:,2),framexy(:,3))**
+2. In the Command Window enter **xy = horzcat(framexy(:,2), framexy(:,3))**
 3. **heatmap(xy)** will display a figure with the heatmap overlaid by the vector of motion
+
+## Overlaying Audio Cues (must have signal processing toolkit)
+### Audio Extraction from .avi
+1. Download and install videopad
+2. VideoPad has an audio extraction tool
+
+### Video Frame to Time Conversion
+1. **frames = length(framexy)**
+2. **time = frames/62.5**
+3. **tv = linspace(0, time, frames)**
+4. **timexy = horzcat(tv(:,1), framexy(:,2), frame(:,3))**
+
+### Audio Processing
+1. In the Command Window enter **[f, Fs] = wavread('filename.wav')**
+2. **N = length(f)**
+3. **slength = N/Fs**
+4. **ta = linspace(0, slength, N)**
+5. **left = f(:,1)**
+6. **wav = [ta, left]**
+7. **indices = find(wav(:,2) >= .3)**
+8. **wav(indices,:) = []**
+
+### Heatmap with Audio Cues plotted
+1. Either clone AVcompare.m from this repository into your working MATLAB directory or select 'New Script' from the toolbar and copy and paste the contents of AVcompare.m into the script and save it as AVcompare.m
+2. Enter **heatmap(xy)**
+3. Enter **AVcompare(timexy, wav)**
+
 
 
 
