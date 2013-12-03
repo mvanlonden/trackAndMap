@@ -20,7 +20,7 @@ Tracks video input using an HSV filter and outputs a MATLAB figure analyzing mov
 
 ### To create the tracking data
 **cover finding file location**
-1. In the terminal enter **Objrec /path/to/video.avi /desired/path/to/data.csv**
+1. In the terminal enter **Objrec /path/to/video.avi /desired/path/to/data.csv** (Right clicking on a file and selecting properties will give you a file's location)
 2. Once application opens, use the HSV sliders to isolate the color of interest in the threshold window
 3. Once cross hair is consistently tracking, switch from pause to play and switch recording on
 4. Once recording is complete, open .csv folder to validate results
@@ -46,20 +46,20 @@ Tracks video input using an HSV filter and outputs a MATLAB figure analyzing mov
 4. **timexy = horzcat(tv(:,1), framexy(:,2), frame(:,3))**
 
 ### Audio Extraction from .avi
-1. Download and install videopad **link here**
+1. Download and install [Video Pad](http://www.nchsoftware.com/videopad/)
 2. VideoPad has an audio extraction tool
 
 ### Audio Processing
-working folder details
-1. Have filename.wav in current working directory
-2. In the Command Window enter **[f, Fs] = wavread('filename.wav')**
-3. **N = length(f)**
-4. **slength = N/Fs**
-5. **ta = linspace(0, slength, N)**
-6. **left = f(:,1)**
-7. **wav = [ta, left]**
-8. **indices = find(wav(:,2) >= .3)**
-9. **wav(indices,:) = []**
+1. A Matlab project uses a current working directory which can be seen in the Current Folder pane
+2. Put filename.wav in current working directory
+3. In the Command Window enter **[f, Fs] = wavread('filename.wav')**
+4. **N = length(f)**
+5. **slength = N/Fs**
+6. **ta = linspace(0, slength, N)**
+7. **left = f(:,1)**
+8. **wav = [ta, left]**
+9. **indices = find(wav(:,2) >= .3)**
+10. **wav(indices,:) = []**
 
 ### Heatmap with Audio Cues plotted
 1.  Select 'New Script' from the toolbar and copy and paste the contents of AVcompare.m into the script and save it as AVcompare.m or clone AVcompare.m from this repository into your working MATLAB directory
