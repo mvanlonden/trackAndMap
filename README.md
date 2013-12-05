@@ -17,6 +17,7 @@ Tracks video input using an HSV filter and outputs a MATLAB figure analyzing mov
 ### To convert files from .wmv to .avi
 1. In the terminal navigate to the folder containing the files
 2. Enter **~/Convert.sh** and the program will convert all the files
+3. After conversion it maybe necessary to crop out similar colors using [Video Pad](http://www.nchsoftware.com/videopad/)
 
 ### To create the tracking data
 **cover finding file location**
@@ -47,7 +48,8 @@ Tracks video input using an HSV filter and outputs a MATLAB figure analyzing mov
 
 ### Audio Extraction from .avi
 1. Download and install [Video Pad](http://www.nchsoftware.com/videopad/)
-2. VideoPad has an audio extraction tool
+2. In Video Pad slelect **Add File** in the toolbar, open the file of interest
+3. 
 
 ### Audio Processing
 1. A Matlab project uses a current working directory which can be seen in the Current Folder pane
