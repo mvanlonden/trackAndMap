@@ -20,11 +20,12 @@ Tracks video input using an HSV filter and outputs a MATLAB figure analyzing mov
 3. After conversion it maybe necessary to crop out similar colors using [Video Pad](http://www.nchsoftware.com/videopad/)
 
 ### To create the tracking data
-**cover finding file location**
-1. In the terminal enter **Objrec /path/to/video.avi /desired/path/to/data.csv** (Right clicking on a file and selecting properties will give you a file's location)
-2. Once application opens, use the HSV sliders to isolate the color of interest in the threshold window
+Note: In Ubuntu right clicking on a file and selecting properties will give you a file's location
+1. In the terminal enter **ObjRec /path/to/video.avi /desired/path/to/data.csv**
+2. Once application opens, reposition the four windows so that each window is visable and use the HSV sliders to isolate the color of interest in the threshold window (for neon pink bringing the S_MIN up to ~100 and the S_MAX down to ~150 worked well for me)
 3. Once cross hair is consistently tracking, switch from pause to play and switch recording on
-4. Once recording is complete, open .csv folder to validate results
+4. Wait for video playback to finish
+5. Once recording is complete, open .csv folder to validate results
 
 ## Graphing results in MATLAB
 ### Importing
