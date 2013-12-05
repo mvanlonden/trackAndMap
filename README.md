@@ -47,9 +47,9 @@ Tracks video input using an HSV filter and outputs a MATLAB figure analyzing mov
 4. **timexy = horzcat(tv(:,1), framexy(:,2), frame(:,3))**
 
 ### Audio Extraction from .avi
-1. Download and install [Video Pad](http://www.nchsoftware.com/videopad/)
-2. In Video Pad slelect **Add File** in the toolbar, open the file of interest
-3. 
+1. Go to [Audio Extractor](http://audio-extractor.net/)
+2. Upload .avi and choose .wav as the extraction output
+3. Add the extracted audio to your Matlab project folder
 
 ### Audio Processing
 1. A Matlab project uses a current working directory which can be seen in the Current Folder pane
