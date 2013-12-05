@@ -60,10 +60,11 @@ Note: In Ubuntu right clicking on a file and selecting properties will give you 
 4. **N = length(f)**
 5. **slength = N/Fs**
 6. **ta = linspace(0, slength, N)**
-7. **left = f(:,1)**
-8. **wav = [ta, left]**
-9. **indices = find(wav(:,2) >= .3)**
-10. **wav(indices,:) = []**
+7. **ta= transpose(ta)**
+8. **left = f(:,1)**
+9. **wav = [ta, left]**
+10. **indices = find(wav(:,2) >= .3)**
+11. **wav(indices,:) = []**
 
 ### Heatmap with Audio Cues plotted
 1.  Select 'New Script' from the toolbar and copy and paste the contents of AVcompare.m into the script and save it as AVcompare.m or clone AVcompare.m from this repository into your working MATLAB directory
