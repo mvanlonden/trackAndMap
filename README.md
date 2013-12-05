@@ -22,7 +22,7 @@ Tracks video input using an HSV filter and outputs a MATLAB figure analyzing mov
 ### To create the tracking data
 Note: In Ubuntu right clicking on a file and selecting properties will give you a file's location
 1. In the terminal enter **ObjRec /path/to/video.avi /desired/path/to/data.csv**
-2. Once application opens, reposition the four windows so that each window is visable and use the HSV sliders to isolate the color of interest in the threshold window (for neon pink bringing the S_MIN up to ~100 and the S_MAX down to ~150 worked well for me)
+2. Once application opens, reposition the four windows so that each window is visable and use the HSV sliders to isolate the color of interest in the threshold window (for neon pink bringing the S_MIN up to ~100, the V_MIN up to ~110 and the S_MAX down to ~150 worked well for me)
 3. Once cross hair is consistently tracking, switch from pause to play and switch recording on
 4. Wait for video playback to finish
 5. Once recording is complete, open .csv folder to validate results
@@ -45,7 +45,8 @@ Note: In Ubuntu right clicking on a file and selecting properties will give you 
 1. **frames = length(framexy)**
 2. **time = frames/62.5**
 3. **tv = linspace(0, time, frames)**
-4. **timexy = horzcat(tv(:,1), framexy(:,2), frame(:,3))**
+4. **tv = transpose(tv)**
+4. **timexy = horzcat(tv(:,1), framexy(:,2), framexy(:,3))**
 
 ### Audio Extraction from .avi
 1. Go to [Audio Extractor](http://audio-extractor.net/)
