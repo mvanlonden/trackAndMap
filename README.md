@@ -1,8 +1,8 @@
 Track And Map
 ===========
 ### Uses
-OpenCV 2.4.6
-Matlab 8.2.0.701
+- OpenCV 2.4.6
+- Matlab 8.2.0.701
 
 Tracks video input using an HSV filter and outputs a MATLAB figure analyzing movement
 ## 
