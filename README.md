@@ -62,7 +62,8 @@ Tracks video input using an HSV filter and outputs a MATLAB figure analyzing mov
 7. **ta= transpose(ta)**
 8. **left = f(:,1)**
 9. **wav = [ta, left]**
-10. **indices = find(wav(:,2) >= .3)**
+10. **plot(wav(:,1),wav(:,2))** in order to see what you would like to use as the upper cut off threshold
+10. **indices = find(wav(:,2) >= .3)** .3 was the upper cut off threshold used here but this will vary, choose a value you feel appropriate from the previous step
 11. **wav(indices,:) = []**
 
 ### Heatmap with Audio Cues plotted
